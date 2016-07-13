@@ -8,7 +8,10 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
+import org.apache.zookeeper.ZooDefs.Perms;
 import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.data.ACL;
+import org.apache.zookeeper.data.Id;
 
 public class CreateGroup implements Watcher {
 
@@ -37,7 +40,8 @@ public class CreateGroup implements Watcher {
 		try {
 			String path = "/"+groupName;
 			byte[] data = new byte[]{1,2,4};
-			String createPath = zk.create(path, data, Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+//			new ACL(Perms.CREATE, new Id("ip",""));
+			String createPath = zk.create(path, "mydata".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 			System.out.println("Created "+ createPath);
 		} catch (KeeperException | InterruptedException e) {
 			e.printStackTrace();
