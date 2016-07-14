@@ -1,2 +1,4 @@
 Hadoop code
-Hdfs MapReduce Hbase Hive etc.
+Hdfs MapReduce Hbase Hive Zookeeper etc.
+
+build : mvn clean & mvn package
