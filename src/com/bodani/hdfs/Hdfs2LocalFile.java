@@ -1,6 +1,4 @@
 package com.bodani.hdfs;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.net.URI;
