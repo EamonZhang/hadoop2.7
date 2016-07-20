@@ -1,4 +1,6 @@
 
+部署
+
 zookeeper | node2 ,node3, node4
 
 namenode,zkfc  | node1 ,node2
