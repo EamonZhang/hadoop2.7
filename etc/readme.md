@@ -52,7 +52,7 @@ java.io.IOException: Timed out waiting 20000ms for a quorum of nodes to respond.
 
 原因 :
 
-full GC 导致连接ZK 超时。
+full GC 导致写journalnode超时。
 
 解决方法 ：
 
