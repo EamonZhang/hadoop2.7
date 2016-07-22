@@ -1,0 +1,39 @@
+HDFS command:
+
+格式化namenode（master）：
+hdfs namenode -format
+启动namenode（master）：
+sbin/hadoop-daemon.sh start namenode
+启动datanode（master）：
+/opt/hadoop-2.4.0/sbin/hadoop-daemon.sh start datanode
+启动resourcemanager（resourcemanager）
+sbin/yarn-daemon.sh start resourcemanager
+启动nodemanager（resourcemanager）
+sbin/yarn-daemon.sh  start nodemanager
+启动WebAppProxy Server（resourcemanager）
+sbin/yarn-daemon.sh start proxyserver 
+启动MapReduce JobHistory Server（resourcemanager） 
+sbin/mr-jobhistory-daemon.sh start historyserver 
+
+启动hdfs（master）
+sbin/start-dfs.sh
+启动yarn（resourcemanager）
+sbin/start-yarn.sh
+
+全部启动
+sbin/start-all.sh
+
+HBASE command:
+
+
+启动服务
+bin/start-hbase.sh 
+启动HMaster
+bin/hbase-daemon.sh start master
+启动 ThriftServer ，
+hbase-deamon.sh start thrift2
+启动 RESTServer
+hbase-deamon.sh start rest
+
+
+

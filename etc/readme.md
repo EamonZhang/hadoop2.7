@@ -93,4 +93,6 @@ node2:16010
 
 $ hbase-deamon.sh start thrift2 
 
+3 启动 RESTServer
 
+$ hbase-deamon.sh start rest 
