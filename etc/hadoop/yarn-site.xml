@@ -47,7 +47,7 @@
     <!--在namenode1上配置rm1,在namenode2上配置rm2,注意：一般都喜欢把配置好的文件远程复制到其它机器上，但这个在YARN的另一个机器上一定要修改 -->
     <property>
         <name>yarn.resourcemanager.ha.id</name>
-        <value>rm2</value>
+        <value>rm1</value>
     </property>
     <!--开启自动恢复功能 -->
     <property>
@@ -155,4 +155,15 @@
         <name>yarn.resourcemanager.ha.automatic-failover.zk-base-path</name>
         <value>/yarn-leader-election</value>
     </property>
+   
+    <property>
+        <name>yarn.web-proxy.address</name>
+        <value>49753</value>
+    </property>
+    <!--
+    <property>
+      <name>yarn.nodemanager.resource.cpu-vcores</name>
+      <value>4</value>
+    </property>
+    -->
 </configuration>

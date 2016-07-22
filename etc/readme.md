@@ -1,7 +1,10 @@
+HDFS HBASE HIVE 部署说明
 
-部署
+一,HDFS HA (version Hadoop 2.7.2)
 
-zookeeper | node2 ,node3, node4
+部署分布
+
+zookeeper | node2 ,node3, node4 (version zookeeper-3.4.8)
 
 namenode,zkfc  | node1 ,node2
 
@@ -59,5 +62,35 @@ full GC 导致写journalnode超时。
 解决方法 ：
 
 修改mapred-site.xml中内存参数
+
+7 启动JobhistoryServer可以通过历史服务器查看已经运行完的Mapreduce作业记录
+
+$ sbin/mr-jobhistory-daemon.sh  start historyserver
+
+WEB URL
+node1:19888
+
+8 启动WebAppProxy Server
+
+$ sbin/yarn-daemon.sh start proxyserver
+
+二,Hbase HA, (version hbase-1.1.5)
+
+部署分布
+master| node1 node2 
+regionservers| node3 node4 node5
+
+1 启动 ,
+node1 $ start-hbase.sh ,
+node2 $ hbase-daemon.sh start master 
+
+WEB URL
+
+node1:16010
+node2:16010
+
+2 启动 ThriftServer ，
+
+$ hbase-deamon.sh start thrift2 
 
 
