@@ -36,4 +36,11 @@ hbase-deamon.sh start thrift2
 hbase-deamon.sh start rest
 
 
+HIVE command:
 
+启动服务
+bin/hiveserver2  &
+bin/beeline -u jdbc:hive2://$HS2_HOST:$HS2_PORT
+hcatalog/sbin/hcat_server.sh
+hcatalog/bin/hcat
+hcatalog/sbin/webhcat_server.sh

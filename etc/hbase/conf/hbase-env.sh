@@ -25,7 +25,7 @@
 
 # The java implementation to use.  Java 1.7+ required.
 # export JAVA_HOME=/usr/java/jdk1.6.0/
-
+export HAOOP_HOME=/opt/hadoop/
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=
 

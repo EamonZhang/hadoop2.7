@@ -1,0 +1,27 @@
+
+----------hadoop-------
+
+etc/hadopp/hadoop-env.sh
+
+etc/hadoop/core-site.xml
+etc/hadoop/hdfs-site.xml
+etc/hadoop/mapred-site.xml
+etc/hadoop/yarn-site.xml
+etc/hadoop/slaves
+
+---------hbase---------
+
+conf/hbase-site.xml
+conf/regionservers
+conf/log4j.properties
+
+依赖hadoop如下配置,将hadoop中以下文件拷贝hbase conf/中 dfs.nameservices 生效 || 或在hbase-env.sh 中设置 HADOOP_HOME 环境变量 
+etc/hadoop/core-site.xml
+etc/hadoop/hdfs-site.xml
+
+---------hive---------
+
+conf/hive-en.sh
+
+conf/hive-site.xml
+conf/hive-log4j2.properties

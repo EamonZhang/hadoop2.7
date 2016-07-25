@@ -1,0 +1,63 @@
+<configuration>
+<property>   
+  <name>datanucleus.fixedDatastore</name>   
+  <value>false</value>   
+</property>
+<property>
+  <name>hive.metastore.execute.setugi</name>
+  <value>true</value>
+</property>
+
+<property>
+  <name>hive.metastore.warehouse.dir</name>
+  <value>/home/hive/warehouse</value>
+  <description>location of default database for the warehouse</description>
+</property>
+
+<!-- metadata database connection configuration -->
+
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:postgresql://postgreshost:5432/hive?useUnicode=true&amp;characterEncoding=UTF-8&amp;createDatabaseIfNotExist=true</value>
+  <description>JDBC connect string for a JDBC metastore</description>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionDriverName</name>
+  <value>org.postgresql.Driver</value>
+  <description>Driver class name for a JDBC metastore</description>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionUserName</name>
+  <value>postgres</value>
+  <description>username to use against metastore database</description>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionPassword</name>
+  <value>root</value>
+  <description>password to use against metastore database</description>
+</property>
+
+<property>
+  <name>hive.hwi.listen.host</name>
+  <value>0.0.0.0</value>
+  <description>This is the host address the Hive Web Interface will listen on</description>
+</property>
+
+<property>
+  <name>hive.hwi.listen.port</name>
+  <value>9999</value>
+  <description>This is the port the Hive Web Interface will listen on</description>
+</property>
+
+<!-- configure hwi war package location 
+<property>
+  <name>hive.hwi.war.file</name>
+  <value>lib/hive-hwi-2.0.1.war</value>
+  <description>This is the WAR file with the jsp content for Hive Web Interface</description>
+</property>
+
+-->
+</configuration>

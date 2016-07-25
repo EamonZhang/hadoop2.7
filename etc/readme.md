@@ -96,3 +96,15 @@ $ hbase-deamon.sh start thrift2
 3 启动 RESTServer
 
 $ hbase-deamon.sh start rest 
+
+三, Hive (version 2.0.1)
+
+1 启动
+
+$ bin/hiveserver2 &
+
+WEB URL
+
+node:10002
+
+
