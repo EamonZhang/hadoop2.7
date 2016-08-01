@@ -91,11 +91,11 @@ node2:16010
 
 2 启动 ThriftServer ，
 
-$ hbase-deamon.sh start thrift2 
+$ hbase-daemon.sh start thrift2 
 
 3 启动 RESTServer
 
-$ hbase-deamon.sh start rest 
+$ hbase-daemon.sh start rest 
 
 三, Hive (version 2.0.1)
 
