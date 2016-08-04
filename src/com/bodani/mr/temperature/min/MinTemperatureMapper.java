@@ -1,4 +1,4 @@
-package com.bodani.mr.temperature;
+package com.bodani.mr.temperature.min;
 import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

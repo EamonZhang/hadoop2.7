@@ -24,7 +24,7 @@ public class Hdfs2LocalFile {
             out = new FileOutputStream(local);
 
             byte[] buffer = new byte[20];
-            in.skip(100);
+            in.skip(100);//跳过100 byte
             int bytesRead = in.read(buffer);
             if (bytesRead >= 0) {
                 out.write(buffer, 0, bytesRead);

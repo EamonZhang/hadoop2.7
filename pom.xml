@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bodani</groupId>
-	<artifactId>hadoop01</artifactId>
+	<artifactId>hadoop_wc2</artifactId>
 	<packaging>jar</packaging>
 	<version>2.7</version>
 	<build>
@@ -12,47 +12,52 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding> 
-					</configuration>
- 			</plugin>
- 			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->  
-            <plugin>  
-                <groupId>org.apache.maven.plugins</groupId>  
-                <artifactId>maven-jar-plugin</artifactId>  
-                <configuration>  
-                    <archive>  
-                        <manifest>  
-                            <addClasspath>true</addClasspath>  
-                            <classpathPrefix>lib/</classpathPrefix>  
-                            <mainClass>com.bodani.zookeeper.ConfigUpdater</mainClass>  
-                        </manifest>  
-                    </archive>  
-                </configuration>  
-            </plugin>  
-            <!-- 拷贝依赖的jar包到lib目录 -->  
-            <plugin>  
-                <groupId>org.apache.maven.plugins</groupId>  
-                <artifactId>maven-dependency-plugin</artifactId>  
-                <executions>  
-                    <execution>  
-                        <id>copy</id>  
-                        <phase>package</phase>  
-                        <goals>  
-                            <goal>copy-dependencies</goal>  
-                        </goals>  
-                        <configuration>  
-                            <outputDirectory>  
-                                ${project.build.directory}/lib  
-                            </outputDirectory>  
-                        </configuration>  
-                    </execution>  
-                </executions>  
-            </plugin>  
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.bodani.wordcout.WordCount2</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- 拷贝依赖的jar包到lib目录
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.directory}/lib
+							</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin> -->
 		</plugins>
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-hdfs</artifactId>
@@ -74,6 +79,17 @@
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
 			<version>3.4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.9.3</version>
 		</dependency>
 	</dependencies>
 </project>

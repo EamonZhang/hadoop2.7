@@ -2,16 +2,15 @@ package com.bodani.hdfs;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.net.URI;
-
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.util.Progressable;
+
+import util.ConfigurationUtil;
 
 public class LocalFile2Hdfs {
     public static void main(String[] args) throws Exception {
@@ -19,10 +18,10 @@ public class LocalFile2Hdfs {
         // 获取读取源文件和目标文件位置参数
         String local = args[0];
         String uri = args[1];
-        
+
         FileInputStream in = null;
         OutputStream out = null;
-        Configuration conf = new Configuration();
+        Configuration conf = ConfigurationUtil.getConfigurationHA();
         try {
             // 获取读入文件数据
             in = new FileInputStream(new File(local));
