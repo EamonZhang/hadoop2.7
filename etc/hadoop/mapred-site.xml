@@ -76,7 +76,7 @@
    <property>
       <name>mapred.child.java.opts</name>
       <value>-Xmx2048m</value>
-  </property
+  </property>
   <property>
       <name>mapreduce.reduce.shuffle.retry-delay.max.ms</name>
       <value>1200000</value>
