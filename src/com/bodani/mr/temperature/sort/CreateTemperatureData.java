@@ -5,6 +5,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -38,9 +39,15 @@ public class CreateTemperatureData extends Configured implements Tool{
 		int exitCode = ToolRunner.run(new CreateTemperatureData(), args);
 		System.exit(exitCode);
 	}
-	public static String createTemperatureRecorder(){
-		long from = 946656000000L;//2000-1-1 0:00:00
-		long create = new Random().nextInt(100000000)*new Random().nextInt(100000000)+from;
-		return sdf.format(new Date(create))+"\t"+new Random().nextInt(40)+"℃";
+	public String createTemperatureRecorder(){
+		String data = "1950-01-01 11:21:02	32℃";
+		try {
+		int year =  new Random().nextInt(20);
+		Calendar cd = Calendar.getInstance();
+				cd.set(Calendar.YEAR, year + 1900);
+			data = sdf.format(cd.getTime())+"\t"+new Random().nextInt(40)+"℃";
+		} catch (Exception e) {
+		}
+		return data;
 	}
 }
