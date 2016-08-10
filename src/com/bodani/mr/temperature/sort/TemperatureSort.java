@@ -3,7 +3,10 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.SequenceFileOutputFormat;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -32,7 +35,9 @@ public class TemperatureSort  {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = ConfigurationUtil.getConfigurationHA();
         JobConf jconf = new JobConf(conf);
-        
+        //对Map输出进行压缩
+//        jconf.setBoolean("mapred.compress.map.output", true);  
+//        jconf.setClass("mapred.map.output.compression.codec",GzipCodec.class, CompressionCodec.class);
         Job job = Job.getInstance(jconf);
 
         job.setJarByClass(TemperatureSort.class);
@@ -43,7 +48,7 @@ public class TemperatureSort  {
         job.setMapOutputValueClass(Text.class);
         
         FileInputFormat.setInputPaths(job, new Path(args[0]));
-
+        
         job.setCombinerClass(HotReducer.class);
         job.setReducerClass(HotReducer.class);
 
@@ -52,6 +57,9 @@ public class TemperatureSort  {
         
         
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        //压缩输出数据
+//        FileOutputFormat.setCompressOutput(job, true);
+//        FileOutputFormat.setOutputCompressorClass(job, GzipCodec.class);
         //设置分区类
         job.setPartitionerClass(YearPartition.class);
         //设置排序类
