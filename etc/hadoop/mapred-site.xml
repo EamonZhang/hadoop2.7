@@ -13,77 +13,67 @@
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
 -->
-
 <!-- Put site-specific property overrides in this file. -->
-
 <configuration>
- <property>
-        <name>mapreduce.framework.name</name>
-        <value>yarn</value>
- </property>
- <property>
-        <name>mapreduce.map.memory.mb</name>
-        <value>1536</value>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
   </property>
   <property>
-        <name>mapreduce.jobhistory.address</name>
-        <value>0.0.0.0:10020</value>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1536</value>
   </property>
   <property>
-        <name>mapreduce.jobhistory.webapp.address</name>
-        <value>0.0.0.0:19888</value>
-   </property>
-  <property>
-      <name>mapreduce.task.io.sort.mb</name>
-      <value>32</value>
+    <name>mapreduce.jobhistory.address</name>
+    <value>0.0.0.0:10020</value>
   </property>
   <property>
-      <name>mapreduce.job.shuffle.input.buffer.percent</name>
-      <value>0.30</value>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>0.0.0.0:19888</value>
   </property>
   <property>
-      <name>mapreduce.map.maxattempts</name>
-      <value>10</value>
+    <name>mapreduce.task.io.sort.mb</name>
+    <value>32</value>
   </property>
   <property>
-      <name>mapreduce.map.memory.mb</name>
-      <value>512</value>
+    <name>mapreduce.job.shuffle.input.buffer.percent</name>
+    <value>0.30</value>
   </property>
   <property>
-      <name>mapreduce.reduce.maxattempts</name>
-      <value>10</value>
+    <name>mapreduce.map.maxattempts</name>
+    <value>10</value>
   </property>
   <property>
-      <name>mapreduce.map.memory.mb</name>
-      <value>512</value>
+    <name>mapreduce.map.memory.mb</name>
+    <value>10240</value>
   </property>
   <property>
-      <name>mapreduce.reduce.maxattempts</name>
-      <value>10</value>
+    <name>mapreduce.reduce.maxattempts</name>
+    <value>10</value>
   </property>
   <property>
-      <name>mapreduce.reduce.memory.mb</name>
-      <value>512</value>
+    <name>mapreduce.map.memory.mb</name>
+    <value>10240</value>
   </property>
   <property>
-      <name>mapreduce.map.java.opts</name>
-      <value>-Xmx512m</value>
+    <name>mapreduce.reduce.maxattempts</name>
+    <value>10</value>
   </property>
   <property>
-      <name>mapreduce.reduce.java.opts</name>
-      <value>-Xmx512m</value>
-  </property>
-   <property>
-      <name>mapred.child.java.opts</name>
-      <value>-Xmx2048m</value>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>20480</value>
   </property>
   <property>
-      <name>mapreduce.reduce.shuffle.retry-delay.max.ms</name>
-      <value>1200000</value>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx20480m</value>
   </property>
   <property>
-      <name>mapreduce.task.timeout</name>
-      <value>1200000</value>
+    <name>mapreduce.reduce.shuffle.retry-delay.max.ms</name>
+    <value>1200000</value>
+  </property>
+  <property>
+    <name>mapreduce.task.timeout</name>
+    <value>1200000</value>
   </property>
   <property>
     <name>mapreduce.map.output.compress</name>
@@ -92,6 +82,10 @@
   <property>
     <name>mapreduce.map.output.compress.codec</name>
     <value>org.apache.hadoop.io.compress.GzipCodec</value>
+  </property>
+  <property>
+    <name>mapreduce.job.reduce.slowstart.completedmaps</name>
+    <value>0.80</value>
   </property>
   <property>
     <name>mapreduce.job.ubertask.enable</name>
