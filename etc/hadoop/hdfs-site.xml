@@ -21,12 +21,10 @@
        <name>dfs.replication</name>
        <value>3</value>
    </property>
- <!--
    <property>
       <name>dfs.permissions.supergroup</name>
       <value>admin</value>
    </property>
-  -->  
  <property>
         <name>dfs.datanode.max.xcievers</name>
         <value>4096</value>
