@@ -3,3 +3,6 @@ memkiller
 .prefs
 .classpath
 .MF
+/bin/
+/target/
+.jar
