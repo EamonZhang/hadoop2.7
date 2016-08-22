@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bodani</groupId>
-	<artifactId>hadoop_wc2</artifactId>
+	<artifactId>hive_test</artifactId>
 	<packaging>jar</packaging>
 	<version>2.7</version>
 	<properties>
@@ -59,7 +59,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.bodani.wordcout.WordCount2</mainClass>
+							<mainClass>com.bodani.hive.HiveJdbcClient</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
