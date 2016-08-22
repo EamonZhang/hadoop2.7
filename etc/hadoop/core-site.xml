@@ -49,4 +49,12 @@
     <name>io.file.buffer.size</name>
     <value>4096</value>
   </property>
+  <property>
+    <name>hadoop.proxyuser.root.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.root.groups</name>
+    <value>*</value>
+  </property>
 </configuration>
